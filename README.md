@@ -1,15 +1,27 @@
 # Word Bubbler 💭
 
-A dynamic, real-time word cloud visualization app that transforms text responses into beautiful, animated word clouds. Built with Next.js, TypeScript, and D3.js.
+A dynamic, real-time word cloud visualization app that transforms live text responses into beautiful, animated word clouds. Perfect for live events, workshops, and collaborative polling. Built with Next.js, TypeScript, Socket.IO, and D3.js.
 
 ## ✨ Features
 
+### 🎯 Live Polling Mode
+- **Multi-user Sessions**: Create shareable poll sessions with unique IDs
+- **Real-time Collaboration**: Multiple participants can submit responses simultaneously
+- **Live Updates**: Watch the word cloud evolve as responses pour in
+- **Session Management**: Copy share links, track participants, and manage sessions
+- **WebSocket Technology**: Instant synchronization across all connected users
+
+### 📊 Data Analysis Mode
+- **📁 File Upload**: Support for CSV, JSON, and TXT files with automatic parsing
+- **📝 Bulk Text Paste**: Copy and paste multiple responses at once
+- **🎯 Demo Data**: Built-in sample data to quickly test the visualization
+- **Offline Analysis**: Analyze existing survey data without live collaboration
+
 ### Core Functionality
-- **Real-time Word Cloud**: Dynamic visualization that updates instantly as new responses are added
-- **Interactive Text Input**: Clean, responsive form for collecting user feedback
 - **Smart Text Processing**: Automatic filtering of stop words and intelligent word frequency calculation
-- **Live Statistics**: Real-time counters for responses, unique words, and total word count
-- **Demo Data**: Built-in sample data to quickly test the visualization
+- **Live Statistics**: Real-time counters for responses, unique words, and participant count
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+- **Session URLs**: Shareable links for easy participant access
 
 ### Visualization Features
 - **D3.js Powered**: Smooth animations and professional-quality word clouds
@@ -58,11 +70,20 @@ Visit the live application: [Word Bubbler](https://data-tools-playground.github.
 
 ## 🎯 Usage
 
-### Basic Usage
-1. **Submit Responses**: Use the text input to submit your thoughts or feedback
-2. **Watch the Cloud**: See words appear and grow in the real-time word cloud
-3. **Demo Mode**: Click "Load Demo Data" to see the app in action with sample responses
-4. **Interactive Exploration**: Hover over words in the cloud for visual feedback
+### Getting Started
+1. **Choose Your Input Method**:
+   - **📁 Upload File**: Drag and drop CSV, JSON, or TXT files
+   - **📝 Paste Text**: Copy multiple responses from anywhere
+   - **✏️ Manual Entry**: Type responses individually or use demo data
+
+2. **Watch the Magic**: See your word cloud generate instantly with frequency-based sizing
+
+3. **Interact**: Hover over words, view statistics, and add more data as needed
+
+### Supported File Formats
+- **CSV**: Columns with headers like "response", "text", "comment", or "feedback"
+- **JSON**: Array of objects with text fields or simple string array
+- **TXT**: One response per line
 
 ### Use Cases
 - **Public Consultations**: Gather and visualize community feedback in real-time
