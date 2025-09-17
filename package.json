@@ -9,14 +9,19 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@types/pg": "^8.15.5",
     "d3": "^7.9.0",
     "d3-cloud": "^1.2.7",
     "d3-scale": "^4.0.2",
+    "drizzle-kit": "^0.31.4",
+    "drizzle-orm": "^0.44.5",
     "next": "15.5.3",
+    "pg": "^8.16.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.1",
+    "twilio": "^5.9.0",
     "uuid": "^13.0.0"
   },
   "devDependencies": {
