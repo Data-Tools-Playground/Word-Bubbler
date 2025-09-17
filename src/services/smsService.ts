@@ -263,14 +263,33 @@ When in a session, simply text your response to contribute to the word cloud!`,
       };
     }
 
-    if (responseText.length > 500) {
-      return {
-        success: false,
-        reply: 'Response too long. Please keep responses under 500 characters.',
-      };
-    }
-
     try {
+      // Import rate limit service
+      const { RateLimitService } = await import('./rateLimitService');
+
+      // Check rate limits before processing
+      const rateLimitResult = await RateLimitService.checkRateLimit(
+        profileId,
+        smsResponse.phoneNumber,
+        sessionId,
+        responseText,
+        'sms'
+      );
+
+      if (!rateLimitResult.allowed) {
+        let replyMessage = `🚫 ${rateLimitResult.reason}`;
+
+        if (rateLimitResult.waitTime) {
+          const waitMinutes = Math.ceil(rateLimitResult.waitTime / 60);
+          replyMessage += ` Please wait ${waitMinutes} minute(s) before trying again.`;
+        }
+
+        return {
+          success: false,
+          reply: replyMessage,
+        };
+      }
+
       // Create response record
       await db.insert(responses).values({
         sessionId,
@@ -292,6 +311,15 @@ When in a session, simply text your response to contribute to the word cloud!`,
         activeSession.responseCount++;
         this.activeSessions.set(smsResponse.phoneNumber, activeSession);
       }
+
+      // Add rate limiting success tag
+      await ProfileService.addProfileTag(
+        profileId,
+        'sms_active_contributor',
+        'auto_behavior',
+        `session_${sessionId}`,
+        'system'
+      );
 
       // TODO: Trigger real-time processing and WebSocket updates
       // TODO: Process sentiment analysis if enabled

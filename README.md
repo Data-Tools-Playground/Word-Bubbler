@@ -1,143 +1,250 @@
-# Word Bubbler 💭
+# Word Bubbler 💭 - "One Phone, One Voice"
 
-A dynamic, real-time word cloud visualization app that transforms live text responses into beautiful, animated word clouds. Perfect for live events, workshops, and collaborative polling. Built with Next.js, TypeScript, Socket.IO, and D3.js.
+**Real-time SMS polling that turns open-text into animated word clouds with advanced analytics, persistent participant intelligence, and comprehensive moderator tools.**
 
-## ✨ Features
+## 🎯 Product Vision
 
-### 🎯 Live Polling Mode
-- **Multi-user Sessions**: Create shareable poll sessions with unique IDs
-- **Real-time Collaboration**: Multiple participants can submit responses simultaneously
-- **Live Updates**: Watch the word cloud evolve as responses pour in
-- **Session Management**: Copy share links, track participants, and manage sessions
-- **WebSocket Technology**: Instant synchronization across all connected users
+Transform live text responses into **animated word clouds** with:
+- **Frequency/Timeline Analysis** - Track word evolution over time
+- **Sentiment & Emotion Mapping** - Plutchik's Wheel implementation
+- **Right-click Filtering** - AND/OR boolean logic with visual UI
+- **Moderator Curation** - Delete/merge/glossary with undo/redo
+- **Respondent Clustering** - HDBSCAN/KMeans participant grouping
+- **Persistent Profiles** - Phone number-based longitudinal tracking
+- **Rate-limit Controls** - Spam prevention and throttling
+- **Demographic Enrichment** - Age, gender, location, occupation data
+- **Geographic Mapping** - Regional sentiment and cloud overlays
+- **AI Insights Dashboard** - Convergence/divergence, opinion leaders
 
-### 📊 Data Analysis Mode
-- **📁 File Upload**: Support for CSV, JSON, and TXT files with automatic parsing
-- **📝 Bulk Text Paste**: Copy and paste multiple responses at once
-- **🎯 Demo Data**: Built-in sample data to quickly test the visualization
-- **Offline Analysis**: Analyze existing survey data without live collaboration
+## ✨ Current Features (MVP+)
 
-### Core Functionality
-- **Smart Text Processing**: Automatic filtering of stop words and intelligent word frequency calculation
-- **Live Statistics**: Real-time counters for responses, unique words, and participant count
-- **Responsive Design**: Works seamlessly on desktop and mobile devices
-- **Session URLs**: Shareable links for easy participant access
+### 🎯 **Real-time Collaborative Polling**
+- Session-based participation with unique session IDs
+- Live word cloud visualization using D3.js with hover effects
+- WebSocket real-time updates across all connected users
+- Dual operation modes: Live polling + offline data analysis
 
-### Visualization Features
-- **D3.js Powered**: Smooth animations and professional-quality word clouds
-- **Frequency-based Sizing**: Words scale proportionally to their frequency
-- **Color-coded Display**: Attractive color scheme with hover effects
-- **Responsive Design**: Works seamlessly on desktop and mobile devices
+### 📱 **SMS Integration with Profile Building**
+- Twilio-powered SMS participation (`JOIN <session-id>`)
+- Automatic profile creation for each phone number
+- Persistent participant tracking across multiple sessions
+- SMS command processing (JOIN, LEAVE, HELP, STOP)
+- Real-time SMS stats and invite management
 
-### User Experience
-- **Recent Responses**: Shows the latest submissions for transparency
-- **Click Interactions**: Interactive word cloud elements with hover effects
-- **Modern UI**: Clean, professional interface built with Tailwind CSS
-- **TypeScript**: Full type safety for robust development
+### 👥 **Profile Building & Evolution System**
+- **Persistent Profiles**: Phone number-based participant intelligence
+- **Longitudinal Tracking**: Engagement patterns across sessions
+- **Tagging System**: Manual and automatic classification
+- **Opinion Leader Identification**: Influence scoring and consistency metrics
+- **Profile Management Dashboard**: Search, filter, and analyze participants
+- **Export Capabilities**: Segment-tagged contact lists
 
-## 🚀 Live Demo
+### 📊 **Analytics & Insights**
+- Response volume metrics and engagement tracking
+- Sentiment analysis with trend visualization
+- Profile-based filtering and segmentation
+- Recent submissions display with statistics
+- File upload support for CSV/text data analysis
 
-Visit the live application: [Word Bubbler](https://data-tools-playground.github.io/Word-Bubbler/)
+### 🎨 **Enhanced User Experience**
+- Responsive design with Tailwind CSS
+- Multiple input methods (web forms, SMS, file upload)
+- Demo data feature for quick exploration
+- Real-time statistics dashboard
 
-## 🛠️ Tech Stack
+## 🚧 Coming Soon (Phase 1)
 
-- **Frontend**: Next.js 15 with TypeScript
-- **Styling**: Tailwind CSS
-- **Visualization**: D3.js and d3-cloud
-- **Deployment**: GitHub Pages
-- **Development**: Turbopack for fast builds
+### 🔒 **Rate Limiting & Throttle Controls**
+- SMS rate limiting per phone number
+- Duplicate message detection and spam prevention
+- Configurable throttle rules and enforcement
 
-## 📦 Installation
+### 🎨 **Enhanced Word Cloud**
+- **Semantic positioning** (MDS/UMAP adjacency-based)
+- Multiple layout modes (classic, semantic-heavy, balanced)
+- Improved animations and visual effects
+- Co-occurring term proximity (e.g., wild~salmon)
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Data-Tools-Playground/Word-Bubbler.git
-   cd Word-Bubbler
-   ```
+### 💭 **Sentiment & Emotion Mapping**
+- **Plutchik's Wheel** emotion classification
+- Color-coded sentiment visualization
+- Fine-grained emotion mapping beyond polarity
+- Emotion-based clustering and insights
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+### 🔧 **Moderator Tools**
+- Delete/merge/glossary functionality with undo/redo
+- Word filtering with right-click UI
+- Boolean AND/OR filter logic
+- Visual moderation interface
 
-3. **Start development server**
-   ```bash
-   npm run dev
-   ```
+## 🔮 Future Roadmap
 
-4. **Open your browser**
-   Navigate to `http://localhost:3000` (or `http://localhost:3002` if 3000 is in use)
+### **Phase 2: Advanced Analytics**
+- **Demographic Enrichment**: Age, gender, location, occupation collection
+- **Geographic Mapping**: Regional sentiment overlays and cloud distributions
+- **Advanced Clustering**: HDBSCAN/KMeans respondent grouping
+- **Timeline Visualization**: Top-N terms evolution over time
 
-## 🎯 Usage
+### **Phase 3: AI Insights & Media**
+- **AI Insights Dashboard**: Convergence/divergence analytics
+- **Missing/Influential Detection**: Automated insight generation
+- **Media Integration**: Photo/video ingestion with geotags
+- **Advanced Exports**: Visual assets and comprehensive analytics
 
-### Getting Started
-1. **Choose Your Input Method**:
-   - **📁 Upload File**: Drag and drop CSV, JSON, or TXT files
-   - **📝 Paste Text**: Copy multiple responses from anywhere
-   - **✏️ Manual Entry**: Type responses individually or use demo data
+### **Phase 4: AR/MR & Enterprise**
+- **AR/MR Support**: 3D animated clouds and mixed reality clusters
+- **Multimodal Feedback**: Voice and video transcript analysis
+- **API Integrations**: CRM and engagement platform connectivity
+- **Multi-tenant Platform**: Commercial scaling and billing
 
-2. **Watch the Magic**: See your word cloud generate instantly with frequency-based sizing
+## 🚀 Quick Start
 
-3. **Interact**: Hover over words, view statistics, and add more data as needed
+### Prerequisites
+- Node.js 18+
+- PostgreSQL database
+- Twilio account (optional for SMS)
 
-### Supported File Formats
-- **CSV**: Columns with headers like "response", "text", "comment", or "feedback"
-- **JSON**: Array of objects with text fields or simple string array
-- **TXT**: One response per line
+### Local Development
+```bash
+git clone https://github.com/Data-Tools-Playground/Word-Bubbler.git
+cd Word-Bubbler
+npm install
+npm run dev
+```
 
-### Use Cases
-- **Public Consultations**: Gather and visualize community feedback in real-time
-- **Workshop Facilitation**: Engage participants and surface key themes during sessions
-- **Survey Analysis**: Transform open-ended responses into visual insights
-- **Brainstorming Sessions**: Capture and display ideas as they emerge
-- **Educational Settings**: Interactive classroom activities and discussion visualization
+Open [http://localhost:3000](http://localhost:3000) to explore the app.
+
+### Environment Setup
+Create `.env.local`:
+```bash
+# Database (Required for Profile System)
+DB_HOST=your-postgres-host
+DB_PORT=5432
+DB_USER=your-db-user
+DB_PASSWORD=your-db-password
+DB_NAME=word_bubble_profiles
+
+# Twilio SMS (Optional - enables SMS features)
+TWILIO_ACCOUNT_SID=your-twilio-sid
+TWILIO_AUTH_TOKEN=your-twilio-token
+TWILIO_PHONE_NUMBER=your-twilio-number
+NEXT_PUBLIC_TWILIO_PHONE_NUMBER=your-twilio-number
+```
+
+## 🏗️ Architecture
+
+### Tech Stack
+- **Frontend**: Next.js 15, React 19, TypeScript, Tailwind CSS
+- **Visualization**: D3.js with semantic positioning algorithms
+- **Backend**: Next.js API routes, Socket.io WebSocket
+- **Database**: PostgreSQL with Drizzle ORM
+- **SMS**: Twilio integration with profile linking
+- **AI/ML**: OpenAI API, Azure Text Analytics, Hugging Face
+- **Deployment**: Vercel with database hosting
+
+### Key Components
+- **WordCloud**: Advanced D3.js visualization with semantic positioning
+- **ProfileManagement**: Comprehensive participant intelligence dashboard
+- **SMSIntegration**: Profile-linked SMS with invite management
+- **LiveSession**: Real-time collaborative polling interface
+- **ProfileService**: Business logic for longitudinal participant tracking
+
+## 📊 Data Model (PRD-Aligned)
+
+### Core Entities
+- **CloudSession**: Poll sessions with configuration
+- **Message**: Individual SMS/web responses
+- **Term**: Processed words with semantic data
+- **GlossaryEntry**: Moderator-defined term mappings
+- **Profile**: Persistent participant profiles with demographics
+- **Cluster**: Respondent groupings with characteristics
+- **ThrottleRule**: Rate limiting configurations
+- **InsightSnapshot**: Stored analytics and metrics
+- **AuditLog**: Change tracking for moderation
+
+See `database/schema.sql` for complete schema.
+
+## 🔧 Usage
+
+### Live Polling Mode
+1. **Create Session**: Set title, question, and configuration
+2. **Invite Participants**: Share session ID or send SMS invites
+3. **SMS Participation**: Participants text `JOIN <session-id>` to join
+4. **Real-time Visualization**: Watch word cloud grow with responses
+5. **Profile Analytics**: Track participants and identify patterns
+
+### Data Analysis Mode
+1. **Upload Data**: CSV/text files or paste bulk responses
+2. **Demo Exploration**: Use sample data for quick testing
+3. **Visualization**: Generate word clouds from existing data
+4. **Profile Analysis**: View participant insights and exports
+
+### Profile Management
+- **Search & Filter**: Find participants by phone, tags, engagement
+- **Longitudinal Analysis**: Track sentiment evolution and patterns
+- **Opinion Leaders**: Identify influential contributors
+- **Segmentation**: Export targeted contact lists by criteria
+
+## 🌟 Key Differentiators
+
+### **Persistent Participant Intelligence**
+- Phone number-based profiles that persist across sessions
+- Longitudinal tracking of engagement and sentiment evolution
+- Automatic behavioral tagging and classification
+
+### **Advanced Word Cloud Technology**
+- Semantic positioning with term adjacency algorithms
+- Real-time animations with WebSocket synchronization
+- Multiple visualization modes and moderator controls
+
+### **Comprehensive SMS Integration**
+- No app download required - participate via text message
+- Profile-linked responses for longitudinal insights
+- Intelligent command processing and rate limiting
+
+### **Professional Moderator Tools**
+- Visual word management with delete/merge/glossary
+- Boolean filtering with AND/OR logic
+- Undo/redo system for content curation
 
 ## 🚀 Deployment
 
-### GitHub Pages (Automatic)
-This repository is configured for automatic deployment to GitHub Pages:
-1. Push to the `main` branch
-2. GitHub Actions automatically builds and deploys
-3. Site is available at: https://data-tools-playground.github.io/Word-Bubbler/
+### Vercel (Recommended)
+1. **Connect Repository**: Import from GitHub to Vercel
+2. **Configure Database**: Set up PostgreSQL (Vercel Postgres, Supabase)
+3. **Environment Variables**: Add all required config in Vercel dashboard
+4. **Deploy**: Automatic deployment on git push
 
-**Note**: The repository must be public for GitHub Pages to work.
+### Production Requirements
+- PostgreSQL database with profile schema
+- Twilio account for SMS functionality
+- OpenAI API key for AI insights (optional)
+- Redis for rate limiting (optional)
 
-## 🎨 Customization
-
-### Styling
-- Modify Tailwind classes in components for custom styling
-- Update color schemes in `WordCloud.tsx` for different visual themes
-- Customize layout in `app/page.tsx`
-
-### Text Processing
-- Add/remove stop words in `textProcessor.ts`
-- Adjust word frequency algorithms
-- Customize filtering logic
-
-## 🔮 Future Enhancements
-
-### Planned Features
-- **Multi-user Real-time**: WebSocket integration for live collaboration
-- **Sentiment Analysis**: Color-code words by emotional tone
-- **Export Options**: Download word clouds as images or data
-- **Advanced Analytics**: Timeline view, trend analysis, and clustering
-- **SMS Integration**: Collect responses via text messages
-- **Moderation Tools**: Admin interface for content management
+See `DEPLOYMENT.md` for detailed setup instructions.
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+We welcome contributions! Please see our contribution guidelines:
 
-## 📄 License
+1. **Fork & Branch**: Create feature branches from main
+2. **Follow Standards**: Use TypeScript, Tailwind CSS, and existing patterns
+3. **Test Thoroughly**: Ensure all features work in both live and offline modes
+4. **Document Changes**: Update README and CLAUDE.md as needed
+5. **Submit PR**: Include clear description of changes and testing
 
-This project is licensed under the MIT License.
+## 📝 License
+
+MIT License - see [LICENSE](LICENSE) for details.
 
 ## 🙏 Acknowledgments
 
-- Built with [Next.js](https://nextjs.org/) and [TypeScript](https://www.typescriptlang.org/)
-- Word cloud visualization powered by [D3.js](https://d3js.org/) and [d3-cloud](https://github.com/jasondavies/d3-cloud)
-- Styled with [Tailwind CSS](https://tailwindcss.com/)
+- **D3.js** - Powerful data visualization framework
+- **Next.js** - Exceptional React framework with API routes
+- **Twilio** - Reliable SMS integration platform
+- **Drizzle ORM** - Type-safe database operations
+- **PRD Contributors** - Comprehensive product requirements and vision
 
 ---
 
-**Happy word clouding!** 🎉
+**Ready to transform text into insights?** Deploy your own Word Bubbler instance and start building participant intelligence from day one. 🚀
